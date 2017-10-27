@@ -12,8 +12,8 @@
     "authors": [
         {
             "name": "Daniël Klabbers",
-            "email": "daniel+flarum@klabbers.email",
-            "homepage": "http://hyn.me"
+            "email": "daniel@klabbers.email",
+            "homepage": "http://luceos.com"
         }
     ],
     "support": {
@@ -21,10 +21,10 @@
         "source": "https://github.com/flagrow/patronage"
     },
     "require": {
-        "flarum/core": "^0.1.0-beta.6"
+        "flarum/core": "^0.1.0-beta.7"
     },
     "require-dev": {
-        "phpunit/phpunit": "^4.8"
+        "flagrow/steamroller": "*"
     },
     "extra": {
         "flarum-extension": {
