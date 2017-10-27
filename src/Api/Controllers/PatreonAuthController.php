@@ -59,6 +59,9 @@ class PatreonAuthController extends AbstractOAuth2Controller
      */
     protected function getSuggestions(ResourceOwnerInterface $resourceOwner)
     {
-        // TODO: Implement getSuggestions() method.
+        return [
+            'username' => $resourceOwner->getUsername(),
+            'avatarUrl' => $resourceOwner->getAvatar()
+        ];
     }
 }
