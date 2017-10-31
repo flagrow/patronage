@@ -30,6 +30,8 @@ System.register('flagrow/patronage/components/PatronageSettingsModal', ['flarum/
         }, {
           key: 'form',
           value: function form() {
+            this.groups = app.store.all('groups');
+
             return [m(
               'div',
               { className: 'Form-group' },
@@ -48,6 +50,25 @@ System.register('flagrow/patronage/components/PatronageSettingsModal', ['flarum/
                 app.translator.trans('flagrow-patronage.admin.github_settings.client_secret_label')
               ),
               m('input', { className: 'FormControl', bidi: this.setting('flagrow-patronage.client_secret') })
+            ), m(
+              'div',
+              { className: 'Form-group' },
+              m(
+                'label',
+                null,
+                app.translator.trans('flagrow-patronage.admin.github_settings.patron_group')
+              ),
+              m(
+                'select',
+                { name: 'patronGroup', value: this.setting('flagrow-patronage.patron-group'), bidi: this.setting('flagrow-patronage.patron-group') },
+                this.groups.map(function (group) {
+                  return m(
+                    'option',
+                    { value: group.id() },
+                    group.namePlural()
+                  );
+                })
+              )
             )];
           }
         }]);

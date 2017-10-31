@@ -5,6 +5,7 @@ namespace Flagrow\Patronage\Api\Controllers;
 use Flarum\Forum\AuthenticationResponseFactory;
 use Flarum\Forum\Controller\AbstractOAuth2Controller;
 use Flarum\Settings\SettingsRepositoryInterface;
+use Gravure\Patreon\Oauth\Resources\Patron;
 use League\OAuth2\Client\Provider\ResourceOwnerInterface;
 use Gravure\Patreon\Oauth\Provider\PatreonProvider as Patreon;
 
@@ -39,26 +40,29 @@ class PatreonAuthController extends AbstractOAuth2Controller
      */
     protected function getAuthorizationUrlOptions()
     {
-        return [];
+        return ['scope' => ['users', 'pledges-to-me']];
     }
 
     /**
-     * @param ResourceOwnerInterface $resourceOwner
+     * @param ResourceOwnerInterface|Patron $resourceOwner
      * @return array
      */
     protected function getIdentification(ResourceOwnerInterface $resourceOwner)
     {
         return [
-            'email' => $resourceOwner->getEmail()
+            'email' => $resourceOwner->email
         ];
     }
 
     /**
-     * @param ResourceOwnerInterface $resourceOwner
+     * @param ResourceOwnerInterface|Patron $resourceOwner
      * @return array
      */
     protected function getSuggestions(ResourceOwnerInterface $resourceOwner)
     {
-        // TODO: Implement getSuggestions() method.
+        return [
+            'username' => $resourceOwner->getUsername(),
+            'avatar' => $resourceOwner->getAvatar()
+        ];
     }
 }

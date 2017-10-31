@@ -1,0 +1,6 @@
+flagrow-patronage:
+    admin:
+        github_settings:
+            client_id_label: Patreon client id
+            client_secret_label: Patreon client secret
+            patron_group: Group for your pledging Patreons
