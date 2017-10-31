@@ -16,7 +16,7 @@ System.register('flagrow/patronage/main', ['flarum/extend', 'flarum/app', 'flaru
     }],
     execute: function () {
 
-      app.initializers.add('flarum-auth-github', function () {
+      app.initializers.add('flagrow-patronage', function () {
         extend(LogInButtons.prototype, 'items', function (items) {
           items.add('patronage', m(
             LogInButton,

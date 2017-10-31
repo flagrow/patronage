@@ -62,7 +62,7 @@ class PatreonAuthController extends AbstractOAuth2Controller
     {
         return [
             'username' => $resourceOwner->getUsername(),
-            'avatar' => $resourceOwner->getAvatar()
+            'avatarUrl' => $resourceOwner->getAvatar()
         ];
     }
 }
