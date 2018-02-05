@@ -25,7 +25,7 @@ System.register('flagrow/patronage/components/PatronageSettingsModal', ['flarum/
         }, {
           key: 'title',
           value: function title() {
-            return app.translator.trans('flagrow-patronage.admin.github_settings.title');
+            return app.translator.trans('flagrow-patronage.admin.settings.title');
           }
         }, {
           key: 'form',
@@ -38,7 +38,7 @@ System.register('flagrow/patronage/components/PatronageSettingsModal', ['flarum/
               m(
                 'label',
                 null,
-                app.translator.trans('flagrow-patronage.admin.github_settings.client_id_label')
+                app.translator.trans('flagrow-patronage.admin.settings.client_id_label')
               ),
               m('input', { className: 'FormControl', bidi: this.setting('flagrow-patronage.client_id') })
             ), m(
@@ -47,7 +47,7 @@ System.register('flagrow/patronage/components/PatronageSettingsModal', ['flarum/
               m(
                 'label',
                 null,
-                app.translator.trans('flagrow-patronage.admin.github_settings.client_secret_label')
+                app.translator.trans('flagrow-patronage.admin.settings.client_secret_label')
               ),
               m('input', { className: 'FormControl', bidi: this.setting('flagrow-patronage.client_secret') })
             ), m(
@@ -56,7 +56,7 @@ System.register('flagrow/patronage/components/PatronageSettingsModal', ['flarum/
               m(
                 'label',
                 null,
-                app.translator.trans('flagrow-patronage.admin.github_settings.patron_group')
+                app.translator.trans('flagrow-patronage.admin.settings.patron_group')
               ),
               m(
                 'select',

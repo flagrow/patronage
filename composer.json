@@ -30,7 +30,7 @@
         "flarum-extension": {
             "title": "Flagrow Patronage",
             "icon": {
-                "image": "resources/icon.jpg",
+                "image": "assets/icon.jpg",
                 "backgroundSize": "cover",
                 "backgroundColor": "#fff",
                 "color": "#fff"

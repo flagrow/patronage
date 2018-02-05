@@ -7,7 +7,7 @@ use Flarum\Forum\Controller\AbstractOAuth2Controller;
 use Flarum\Settings\SettingsRepositoryInterface;
 use Gravure\Patreon\Oauth\Resources\Patron;
 use League\OAuth2\Client\Provider\ResourceOwnerInterface;
-use Gravure\Patreon\Oauth\Provider\PatreonProvider as Patreon;
+use Gravure\Patreon\Oauth\Provider\Patreon;
 
 class PatreonAuthController extends AbstractOAuth2Controller
 {
@@ -62,8 +62,7 @@ class PatreonAuthController extends AbstractOAuth2Controller
     {
         return [
             'username' => $resourceOwner->getUsername(),
-            'avatarUrl' => $resourceOwner->getAvatar(),
-            'bio' => $resourceOwner->about
+            'avatarUrl' => $resourceOwner->getAvatar()
         ];
     }
 }
